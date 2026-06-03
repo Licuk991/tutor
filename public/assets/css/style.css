@@ -1,0 +1,322 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+    --dark-blue: #01162b;
+    --blua: #003859;
+    --ligth-blue: #6a90b4;
+    --wlite: #99a4bc;
+    --white-blue: #d2dbec;
+}
+
+body {
+    background-color: #d2dbec;
+}
+
+/* шапка */
+
+
+/* --- HEADER STYLES --- */
+
+#main-header, .card-header {
+    background-color: var(--dark-blue) !important; /* Глубокий темный фон */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    position: sticky; /* Шапка будет прилипать при скролле */
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-logo {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Стили ссылок навигации */
+.navbar-nav .nav-link {
+    color: var(--white-blue) !important; /* Цвет текста из вашей палитры */
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Эффект при наведении на ссылку */
+.navbar-nav .nav-link:hover {
+    color: var(--ligth-blue) !important;
+    transform: translateY(-1px);
+}
+
+/* Выделение активной ссылки (если будете добавлять класс active через JS/Backend) */
+.navbar-nav .nav-link.active {
+    color: #fff !important;
+    border-bottom: 2px solid var(--ligth-blue);
+}
+
+/* Специальный стиль для кнопки "Выйти" (чтобы не сбивать с толку) */
+.logout-link {
+    color: var(--wlite) !important;
+    opacity: 0.8;
+}
+
+.logout-link:hover {
+    color: #ff6b6b !important; /* Легкий красный акцент только для выхода */
+    opacity: 1;
+}
+
+/* Кнопка регистрации (Guest) */
+.btn-outline-light {
+    border-color: var(--ligth-blue);
+    color: var(--ligth-blue);
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--ligth-blue);
+    color: var(--dark-blue);
+    border-color: var(--ligth-blue);
+}
+
+
+/* --- КАРТОЧКИ (Курсы и Учителя) --- */
+.card {
+    transition: transform 0.2s ease;
+}
+
+.course-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(1, 22, 43, 0.15) !important; /* Тень в тон dark-blue */
+}
+
+.course-img {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.course-card:hover .course-img {
+    transform: scale(1.1);
+}
+
+.teacher-card {
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--white-blue); /* Легкая граница */
+}
+
+.teacher-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(1, 22, 43, 0.15) !important;
+}
+
+/* --- ФОРМЫ И ИНПУТЫ --- */
+
+/* Стилизация фокуса (заменил синий на blua) */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--blua);
+    box-shadow: 0 0 0 0.25rem rgba(0, 56, 89, 0.15);
+    background-color: #fff !important;
+}
+
+/* Группы ввода */
+.input-group-text {
+    border-color: var(--white-blue);
+    color: var(--ligth-blue);
+}
+
+.input-group:focus-within .input-group-text {
+    border-color: var(--blua);
+    color: var(--blua);
+}
+
+.form-control, .form-select {
+    border-color: var(--white-blue);
+}
+
+/* Анимация полей учителя */
+#teacher_fields {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- КНОПКИ --- */
+
+/* Основная кнопка (заменил blue на dark-blue) */
+.btn-primary {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--blua);
+    border-color: var(--blua);
+    transform: translateY(-2px);
+}
+
+/* Кнопки ролей (Radio/Checkbox) */
+.role-btn {
+    transition: all 0.3s ease;
+    border: 2px solid var(--white-blue);
+    color: var(--blua);
+}
+
+.btn-check:checked + .role-btn {
+    background-color: var(--blua) !important;
+    border-color: var(--blua) !important;
+    color: var(--white-blue) !important;
+    transform: scale(1.05);
+}
+
+/* Контурная кнопка */
+.btn-outline-primary {
+    color: var(--blua);
+    border-color: var(--blua);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--blua);
+    color: var(--white-blue);
+    transform: scale(1.02);
+}
+
+/* --- КОМПОНЕНТЫ УЧИТЕЛЯ --- */
+
+.teacher-photo-wrapper {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+}
+
+.teacher-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.teacher-card:hover .teacher-photo-wrapper img {
+    transform: scale(1.05);
+}
+
+.photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(1, 22, 43, 0.7)); /* Градиент в тон dark-blue */
+    display: flex;
+    justify-content: center;
+}
+
+/* Иконки в инфо */
+.icon-box {
+    width: 35px;
+    height: 35px;
+    background: rgba(106, 144, 180, 0.15); /* Цвет ligth-blue с прозрачностью */
+    color: var(--blua);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* подвал */
+
+
+/* Основной фон подвала */
+.footer-section {
+    background-color: var(--dark-blue) !important; /* Темный стильный цвет */
+    padding: 60px 0 30px;
+    font-size: 0.95rem;
+}
+
+/* Заголовки колонок */
+.footer-title {
+    font-weight: 700;
+    margin-bottom: 25px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+
+/* Текст описания */
+.footer-text {
+    color: #adb5bd;
+    line-height: 1.6;
+}
+
+/* Стили ссылок */
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a, 
+.footer-contact li {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-links a:hover, 
+.footer-contact li:hover {
+    color: #ffffff;
+    padding-left: 5px; /* Эффект смещения при наведении */
+}
+
+/* Иконки соцсетей */
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    background: #0d6efd; /* Цвет Bootstrap Primary */
+    transform: translateY(-3px);
+}
+
+/* Контакты с иконками */
+.footer-contact li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: #0d6efd; /* Цвет акцента */
+    font-size: 1.2rem;
+}
+
+/* Разделитель */
+hr {
+    opacity: 0.1;
+}
