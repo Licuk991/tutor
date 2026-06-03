@@ -9,6 +9,7 @@
     <!-- Добавим Bootstrap Icons для красоты -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="icon" sizes="32x32" href="{{ asset('assets/img/814a23075f8e11f18556eaee102575c0_1.jfif') }}">
     <title>@yield('title')</title>
     <style>
         :root {
