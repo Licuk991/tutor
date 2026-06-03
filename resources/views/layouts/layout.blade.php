@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-grid.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="icon" sizes="32x32" href="{{ asset('assets/img/814a23075f8e11f18556eaee102575c0_1.jfif') }}">
     <title>@yield('title')</title>
 </head>
 <body>
