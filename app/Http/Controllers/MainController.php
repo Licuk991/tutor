@@ -266,7 +266,7 @@ class MainController extends Controller
             } elseif ($user->role === 'teacher') {
                 return redirect()->route('profileT')->with('success', 'Вы зашли как учитель');
             } elseif ($user->role === 'user') {
-                return redirect()->route('profile')->with('success', 'Вы зашли как пользователь');
+                return redirect()->route('schedule')->with('success', 'Вы зашли как пользователь');
             }
 
             return redirect()->route('login');
